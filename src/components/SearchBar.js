@@ -9,6 +9,8 @@ class SearchBar extends React.Component {
 
     onFormSubmit = event => {
         event.preventDefault();
+
+        this.props.onFormSubmit(this.state.term);
     };
 
     render() {
@@ -16,9 +18,9 @@ class SearchBar extends React.Component {
           <div className="search-bar ui inverted segment">
             <form onSubmit={this.onFormSubmit} className="ui inverted form">
               <div className="field">
-                <label>
+                <label style={{ fontSize: 20 }}>
                   Video Search
-                  <i class="search icon" />
+                  <i className="search icon" />
                 </label>
                 <input 
                 placeholder="Search" 
